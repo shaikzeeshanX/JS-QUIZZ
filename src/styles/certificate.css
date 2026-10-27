@@ -1,0 +1,338 @@
+/* ------------------------------------------------------------------
+   CERTIFICATE OF SUCCESS — minimalist night edition.
+   The Light Bloom (WebGL, original purple) lives INSIDE the sheet;
+   the JS wordmark + logo diagram sit on top. Print → clean paper.
+   ------------------------------------------------------------------ */
+
+.cert-page {
+  min-height: 100vh;
+  background: #f5f3ee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px 64px;
+  color: #1b1b1b;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cert-tools {
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cert-tools button {
+  background: transparent;
+  border: 1px solid rgba(27, 27, 27, 0.25);
+  padding: 10px 18px;
+  font: 600 11px/1 ui-monospace, "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.14em;
+  color: #1b1b1b;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.cert-tools button:hover {
+  border-color: #1b1b1b;
+  background: #fffdf9;
+}
+
+.cert-tools .cert-primary {
+  background: #1b1b1b;
+  border-color: #1b1b1b;
+  color: #f5f3ee;
+}
+
+.cert-tools .cert-primary:hover {
+  background: #000;
+}
+
+.cert-sheet {
+  width: 100%;
+  max-width: 860px;
+  background: #0a0a10;
+  border: 1px solid #d9d4c8;
+  box-shadow:
+    0 1px 0 #d9d4c8,
+    0 40px 90px -42px rgba(10, 10, 16, 0.65);
+  padding: 64px 74px 46px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* inner hairline frame, above the bloom */
+.cert-sheet::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(245, 243, 238, 0.16);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* the purple light bloom — inside the certificate, clipped by it */
+.cert-bloom {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cert-bloom > div {
+  position: absolute;
+  inset: 0;
+  background: #0a0a10;
+}
+
+.cert-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- JavaScript wordmark + logo diagram (decoration, never clickable) --- */
+.cert-js {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+  user-select: none;
+  margin-bottom: 4px;
+}
+
+.cert-js-square {
+  width: 64px;
+  height: 64px;
+  background: #f7df1e;
+  color: #1b1b1b;
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 8px 7px 0;
+  font: 800 30px/1 Arial, Helvetica, sans-serif;
+  letter-spacing: -0.02em;
+  box-shadow: 0 8px 24px rgba(247, 223, 30, 0.28);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cert-js-word {
+  font: 600 12px ui-monospace, "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.58em;
+  padding-left: 0.58em; /* optically re-center the tracked text */
+  color: #f5f3ee;
+}
+
+.cert-head {
+  text-align: center;
+}
+
+.cert-rule {
+  display: block;
+  width: 54px;
+  height: 1px;
+  background: #c2a24b;
+  margin: 22px auto 18px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cert-head h1 {
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px;
+  color: #f5f3ee;
+}
+
+.cert-sub {
+  font-style: italic;
+  color: rgba(239, 230, 255, 0.72);
+  font-size: 15px;
+  margin: 0;
+}
+
+.cert-line {
+  text-align: center;
+  color: #c9c4b8;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 30px 0 0;
+}
+
+.cert-line b {
+  color: #f5f3ee;
+  font-weight: 600;
+}
+
+.cert-name {
+  text-align: center;
+  font-size: 44px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin: 12px auto 0;
+  padding: 0 28px 12px;
+  width: fit-content;
+  max-width: 100%;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(245, 243, 238, 0.32);
+}
+
+.cert-stats {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin: 40px 0 6px;
+  text-align: center;
+}
+
+.cert-stats b {
+  display: block;
+  font-size: 26px;
+  font-weight: 500;
+  color: #f5f3ee;
+}
+
+.cert-stats span {
+  display: block;
+  margin-top: 6px;
+  font: 600 10px ui-monospace, "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #9a958a;
+}
+
+.cert-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.cert-cell {
+  text-align: center;
+  font: 600 10px ui-monospace, "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9a958a;
+  min-width: 170px;
+}
+
+.cert-cell span + span {
+  display: block;
+  margin-top: 3px;
+}
+
+.sig-line {
+  display: block;
+  width: 170px;
+  border-top: 1px solid rgba(245, 243, 238, 0.4);
+  margin: 0 auto 9px;
+}
+
+.cert-seal {
+  width: 94px;
+  height: 94px;
+  border: 1px solid #c2a24b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: #f5f3ee;
+  position: relative;
+  flex: none;
+}
+
+.cert-seal::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(194, 162, 75, 0.45);
+  border-radius: 50%;
+}
+
+.cert-id {
+  display: block;
+  text-align: center;
+  margin-top: 44px;
+  font: 500 10px ui-monospace, "Cascadia Mono", Consolas, monospace;
+  letter-spacing: 0.32em;
+  color: #7c7668;
+}
+
+@media print {
+  .cert-page {
+    background: #fff;
+    padding: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cert-bloom {
+    display: none !important;
+  }
+
+  .cert-sheet {
+    background: #fff;
+    border: none;
+    box-shadow: none;
+    padding: 40px 48px;
+  }
+
+  .cert-sheet::before {
+    border-color: rgba(27, 27, 27, 0.18);
+  }
+
+  .cert-js-square {
+    box-shadow: none;
+  }
+
+  .cert-js-word,
+  .cert-head h1,
+  .cert-name,
+  .cert-line b,
+  .cert-stats b {
+    color: #1b1b1b;
+  }
+
+  .cert-sub {
+    color: #6f6a5e;
+  }
+
+  .cert-line {
+    color: #6f6a5e;
+  }
+
+  .cert-name {
+    border-color: rgba(27, 27, 27, 0.3);
+  }
+
+  .cert-stats span,
+  .cert-cell {
+    color: #8b8577;
+  }
+
+  .sig-line {
+    border-color: rgba(27, 27, 27, 0.4);
+  }
+
+  .cert-seal {
+    color: #1b1b1b;
+  }
+
+  .cert-id {
+    color: #a8a296;
+  }
+
+  @page {
+    margin: 12mm;
+  }
+}

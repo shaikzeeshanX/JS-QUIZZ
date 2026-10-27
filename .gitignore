@@ -1,0 +1,13 @@
+node_modules/
+dist/
+server/data/db.json
+*.log
+.DS_Store
+
+# generated single-file build (recreate with `npm run standalone`)
+JS.QUIZZ.html
+
+# local agent tooling / stray archives
+.agents/
+skills-lock.json
+.zip

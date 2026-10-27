@@ -1,0 +1,33 @@
+{
+  "name": "js-quizz",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "JS.QUIZZ — brutalist JavaScript quiz. 10 fixed foundation questions + 10 fresh AI-generated questions every login.",
+  "scripts": {
+    "dev:server": "node server/index.mjs",
+    "dev:client": "vite",
+    "dev": "concurrently -k -n SERVER,CLIENT -c yellow,cyan \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "vite build",
+    "standalone": "vite build && node scripts/make-standalone.mjs",
+    "start": "node server/index.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "framer-motion": "^11.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.1",
+    "sharp": "^0.35.5",
+    "typescript": "^5.9.3",
+    "vite": "^6.3.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

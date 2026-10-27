@@ -1,0 +1,13 @@
+# JS.QUIZZ — full stack on Render (API + leaderboard + built frontend).
+# Render → New + → Blueprint → point it at this repo → Apply.
+services:
+  - type: web
+    name: js-quizz
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
