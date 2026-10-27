@@ -7,6 +7,13 @@ sound effects, and an instant answer review under every question.
 **It works with zero backend** — the whole question engine is built into the
 frontend. A server is optional and only adds the shared leaderboard.
 
+## 🌍 Play it live (GitHub Pages)
+
+**https://shaikzeeshanx.github.io/JS-QUIZZ/**
+
+Fully playable there — offline login, 20-question opener, review deck,
+"add 10 new questions" rounds, and the night-mode certificate at 50.
+
 ## 🚀 Easiest way to run (single HTML file)
 
 1. Double-click **`START-JS.QUIZZ.bat`** — it starts the backend (optional,
