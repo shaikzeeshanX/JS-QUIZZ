@@ -62,9 +62,11 @@ if (fs.existsSync(imgDir)) {
       ext === ".svg" ? "image/svg+xml" : null;
     if (!mime) continue;
     const dataUri = `data:${mime};base64,${fs.readFileSync(file).toString("base64")}`;
-    const needle = `/img/${name}`;
-    while (html.includes(needle)) {
-      html = html.replace(needle, dataUri);
+    /* match both absolute (/img/x — old builds) and relative (img/x — sub-path safe) */
+    for (const needle of [`/img/${name}`, `img/${name}`]) {
+      while (html.includes(needle)) {
+        html = html.replace(needle, dataUri);
+      }
     }
   }
 }
